@@ -15,7 +15,6 @@ TIMER = {
     TIMER._clock.main = 0;
     TIMER._clock.sub = 0;
     TIMER._clock.div = 0;
-    LOG.out('TIMER', 'Reset.');
   },
 
   step: function() {
@@ -41,8 +40,8 @@ TIMER = {
       if(TIMER._clock.div==16)
       {
         TIMER._clock.div = 0;
-	TIMER._div++;
-	TIMER._div &= 255;
+        TIMER._div++;
+        TIMER._div &= 255;
       }
     }
 
@@ -51,17 +50,17 @@ TIMER = {
       switch(TIMER._tac & 3)
       {
         case 0:
-	  if(TIMER._clock.main >= 64) TIMER.step();
-	  break;
-	case 1:
-	  if(TIMER._clock.main >=  1) TIMER.step();
-	  break;
-	case 2:
-	  if(TIMER._clock.main >=  4) TIMER.step();
-	  break;
-	case 3:
-	  if(TIMER._clock.main >= 16) TIMER.step();
-	  break;
+          if(TIMER._clock.main >= 64) TIMER.step();
+          break;
+        case 1:
+          if(TIMER._clock.main >=  1) TIMER.step();
+          break;
+        case 2:
+          if(TIMER._clock.main >=  4) TIMER.step();
+          break;
+        case 3:
+          if(TIMER._clock.main >= 16) TIMER.step();
+          break;
       }
     }
   },
